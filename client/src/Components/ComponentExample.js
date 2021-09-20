@@ -1,3 +1,4 @@
+import MyButton from "./MyButton"
 import MyLoader from "./MyLoader"
 import MySpinner from "./MySpinner"
 
@@ -11,6 +12,7 @@ const ComponentExample = () => {
     <div>
       <MySpinner />
     </div>
+    <MyButton>Test</MyButton>
     </>
   )
 
