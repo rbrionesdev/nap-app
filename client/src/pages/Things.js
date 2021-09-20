@@ -1,4 +1,7 @@
 import React from 'react'
+import MyLoader from '../Components/MyLoader'
+
+
 
 const Things = () => {
   return (
