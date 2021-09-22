@@ -1,12 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
+import { AuthContext } from '../providers/AuthProvider'
+import { useHistory, useLocation } from 'react-router'
 
 const NavBar = () => {
+  const history = useHistory()
+  const {user, handleLogout } = useContext(AuthContext)
+  const location = useLocation()
+
+  const rightNavItems = () => {
+    if (user) {
+      return (
+        <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
+      );
+    }
+    return (
+      <>
+        <Link to="/login">
+          <Menu.Item active={location.pathname == "/login"}>Login</Menu.Item>
+        </Link>
+        <Link to="/register">
+          <Menu.Item active={location.pathname == "/register"}>
+            Register
+          </Menu.Item>
+        </Link>
+      </>
+    );
+  };
+
   return (
     <Menu>
-      <Menu.Item><Link to='/'>Home</Link></Menu.Item>
-      <Menu.Item><Link to='/things'>Things</Link></Menu.Item>
+      <Link to='/'><Menu.Item active={location.pathname == "/"}>Home</Menu.Item></Link>
+      <Link to='/things'><Menu.Item active={location.pathname == "/things"}>Things</Menu.Item></Link>
+      <Menu.Menu position="right">
+        {rightNavItems()}
+      </Menu.Menu>
     </Menu>
   )
 }
