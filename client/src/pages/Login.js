@@ -16,6 +16,7 @@ const Login = () => {
 
   return (
     <div>
+      <h1>Log In</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Input
         value={email}
@@ -29,7 +30,7 @@ const Login = () => {
         onChange={(e, { value }) => {
           setPassword(value);
         }}
-        label={"Email"}
+        label={"Password"}
          />
         
         <MyButton>Add</MyButton>
