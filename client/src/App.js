@@ -18,7 +18,7 @@ function App() {
       <FetchUser>
         <Container>
           <Switch>
-            <Route exact path='/' component={Home}/>
+            <Route exact path='/' component={Home}/>    
             <ProtectedRoute exact path='/things' component={Things}/>
             <Route exact path='/components' component={ComponentExample}/>
             <Route exact path='/login' component={Login}/>
