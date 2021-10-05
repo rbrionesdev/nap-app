@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link, } from 'react-router-dom';
-import { Header, Image, } from 'semantic-ui-react';
-import { Redirect, useHistory } from 'react-router';
+import { Image, } from 'semantic-ui-react';
+import { useHistory } from 'react-router';
 
 const NoMatch = () => {
   const history = useHistory()
