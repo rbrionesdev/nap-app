@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
     resources :users
 
+    resources :punchcards
+
     resources :restaurants
+
+    get 'things', to: 'things#index'
   end
 end

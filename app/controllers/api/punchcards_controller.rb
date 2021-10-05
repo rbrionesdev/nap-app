@@ -3,7 +3,7 @@ class Api::PunchcardsController < ApplicationController
 
 
   def index
-    punchcard = Punchcard.all_and_then_some
+    punchcard = Punchcard.all
     render json: punchcards
   end
 
