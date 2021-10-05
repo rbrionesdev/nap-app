@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
@@ -18,10 +18,10 @@ const NavBar = () => {
     return (
       <>
         <Link to="/login">
-          <Menu.Item active={location.pathname == "/login"}>Login</Menu.Item>
+          <Menu.Item active={location.pathname === "/login"}>Login</Menu.Item>
         </Link>
         <Link to="/register">
-          <Menu.Item active={location.pathname == "/register"}>
+          <Menu.Item active={location.pathname === "/register"}>
             Register
           </Menu.Item>
         </Link>
@@ -31,8 +31,8 @@ const NavBar = () => {
 
   return (
     <Menu>
-      <Link to='/'><Menu.Item active={location.pathname == "/"}>Home</Menu.Item></Link>
-      <Link to='/things'><Menu.Item active={location.pathname == "/things"}>Things</Menu.Item></Link>
+      <Link to='/'><Menu.Item active={location.pathname === "/"}>Home</Menu.Item></Link>
+      <Link to='/things'><Menu.Item active={location.pathname === "/things"}>Things</Menu.Item></Link>
       <Menu.Menu position="right">
         {rightNavItems()}
       </Menu.Menu>
