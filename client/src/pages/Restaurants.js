@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, Card } from 'semantic-ui-react';
 import RestaurantForm from '../Components/RestaurantForm';
+import Restaurant from '../Components/Restaurant';
 
 function Restaurants(props) {
   const [stores, setStores] = useState([])
@@ -29,22 +30,20 @@ function Restaurants(props) {
   }
 
   const renderStores = () => {
-    return stores.map((s) => {
+    return stores.map((store) => {
     return (
-      <div>
-        <h2>{s.name}</h2>
-        <p>{s.city}</p>
-        <Button onClick={() => deleteStore(s.id)}>delete</Button>
+      <div key={store.id}>
+        <Restaurant 
+        store={store}
+        deleteStore={deleteStore}
+        />
       </div>
     )
   })}
 
   return (
     <div>
-      <Card>
-      <RestaurantForm />
-      </Card>
-      <h1>Here are some Restaurants</h1>
+      <h1>Restaurants</h1>
       {renderStores()}
     </div>
   );

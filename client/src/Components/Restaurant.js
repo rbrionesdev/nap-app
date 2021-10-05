@@ -1,9 +1,12 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 
-function Restaurant(props) {
+function Restaurant({store, deleteStore}) {
   return (
     <div>
-      <h1>Individual Restaurant</h1>
+      <h2>{store.name}</h2>
+      <p>{store.city}</p>
+      <Button onClick={() => deleteStore(store.id)}>delete</Button>
     </div>
   );
 }
