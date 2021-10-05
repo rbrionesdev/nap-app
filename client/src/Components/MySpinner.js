@@ -1,5 +1,5 @@
 import { Spinner } from 'react-bootstrap'
-import { Image, Segment } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
 const MySpinner = () => {
 
