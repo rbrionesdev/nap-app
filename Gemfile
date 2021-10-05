@@ -24,7 +24,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem "devise_token_auth"
 
 group :development, :test do
   gem 'better_errors'
@@ -35,10 +35,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem "devise_token_auth"
 
 end
 
