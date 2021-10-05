@@ -26,9 +26,9 @@ account_types = ['business', 'customer']
       5.times do
         reward = punch.rewards.create(name:Faker::Name.name, description:Faker::Restaurant.description, punchcard_id:punch.id, cost:[rand(10)])
       end
-      # 5.times do
-      #   user_punch = UserPunchcards.create(current_punches:[rand(10)], user_id:user.id, punchcard_id:punch.id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
-      # end
+      5.times do
+        user_punch = UserPunchcard.create(current_punches:[rand(10)], user_id:user.id, punchcard_id:punch.id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      end
     end
   end
 end
@@ -37,3 +37,4 @@ end
 puts User.all.length
 puts Restaurant.all.length
 puts Reward.all.length
+puts UserPunchcard.all.length

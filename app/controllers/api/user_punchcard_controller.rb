@@ -1,29 +1,29 @@
 class Api::UserPunchcardController < ApplicationController
-  before_action :set_user_punchcard, only: [:show, :update, :destroy]
   before_action :set_user
+  before_action :set_userPunchcard, only: [:show, :update, :destroy]
 
   def index
-    user_punchcard = User_punchcard.all
-    render json: user_punchcard
+    user_punchcards = @user.userPunchcards.all
+    render json: user_punchcards
   end
 
   def show
-    render json: @user_punchcard
+    render json: @UserPunchcard
   end
 
   def create
     @user_punchcard = User_punchcard.new(user_punchcard_params)
 
-    if @patient.save
-      render json: @user_punchcard
+    if @userPunchcard.save
+      render json: @userPunchcard
     else
-      render json: {error: @user_punchcard.errors}, status: 422
+      render json: {error: @userPunchcard.errors}, status: 422
     end
   end
 
   def destroy
-    @user_punchcard.destroy
-    render json: @user_punchcard
+    @userPunchcard.destroy
+    render json: @userPunchcard
   end
 
   private
@@ -32,11 +32,11 @@ class Api::UserPunchcardController < ApplicationController
       @user = User.find(params[:user_id])
     end
 
-    def set_user_punchcard
-      @user_punchcard = User_punchcard.find(params[:id])
+    def set_userPunchcard
+      @userPunchcard = UserPunchcard.find(params[:id])
     end
 
-    def user_punchcard_params
-      params.require(:user_punchcard).permit(:expiration_date, :current_punches, :user_id, :punchcard_id)
+    def userPunchcard_params
+      params.require(:userPunchcard).permit(:expiration_date, :current_punches, :user_id, :punchcard_id)
     end
 end
