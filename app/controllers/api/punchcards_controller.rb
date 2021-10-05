@@ -22,6 +22,7 @@ class Api::PunchcardsController < ApplicationController
   end
 
 
+
   def destroy
     @punchcard.destroy
     render json: @punchcard
