@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import FetchUser from './Components/FetchUser';
 import ProtectedRoute from './Components/ProtectedRoute';
+import Rewards from './pages/Rewards';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home}/>    
             <ProtectedRoute exact path='/things' component={Things}/>
+            <Route exact path='/rewards' component={Rewards}/>
             <Route exact path='/components' component={ComponentExample}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
