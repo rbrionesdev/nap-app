@@ -17,6 +17,12 @@ class Api::PunchcardsController < ApplicationController
     end
   end
 
+  
+  def punchcard_by_user
+    render json: User.punchcards_byuser(params[:id])
+  end
+
+  
   def update 
     @punchcard.update(punchcard_params)
   end
@@ -39,5 +45,5 @@ class Api::PunchcardsController < ApplicationController
   def punchcard_params
     params.require(:punchcard).permit(:total_punches, :user_id, :restaurant_id)
   end
-end
+
 end
