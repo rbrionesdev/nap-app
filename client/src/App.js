@@ -10,7 +10,6 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
 import ProtectedRoute from './Components/ProtectedRoute';
-import Restaurant from './Components/Restaurant';
 import Restaurants from './pages/Restaurants';
 import EditUser from './Components/EditUser';
 import QRdemo from './Components/QRdemo';
@@ -30,6 +29,7 @@ function App() {
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/qrdemo' component={QRdemo} />
+            <Route exact path='/restaurants' component={Restaurants}/>
             <Route exact path='/user/punchcards' component={UserPunchCards} />
             <Route component={NoMatch} />
           </Switch>

@@ -37,7 +37,7 @@ function Restaurants(props) {
 
 const deleteStore = async (id) => {
     try {
-      await axios.delete(`/api/restaurants/${id}`)
+      await axios.delete(`/api/users/${user.id}/restaurants/${id}`)
     } catch (error) {
       console.log(error)
     }
