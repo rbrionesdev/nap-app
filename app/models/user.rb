@@ -29,4 +29,3 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   
 end
-brain.larkin@kozey-gusikowski.com
