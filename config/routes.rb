@@ -14,6 +14,5 @@ Rails.application.routes.draw do
     get 'things', to: 'things#index'
     get 'restaurants/all', to: 'restaurants#all'
   
-
 end
          
