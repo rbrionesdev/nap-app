@@ -10,11 +10,14 @@ Rails.application.routes.draw do
         end
       end
     end
+    get 'restaurants/all', to: 'restaurants#all'
+    get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
   end
 
     get 'things', to: 'things#index'
-    get 'restaurants/all', to: 'restaurants#all'
   
     delete 'users/:id', to: 'users#delete'
 
+
 end
+         

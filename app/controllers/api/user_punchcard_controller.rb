@@ -37,6 +37,6 @@ class Api::UserPunchcardController < ApplicationController
     end
 
     def userPunchcard_params
-      params.require(:userPunchcard).permit(:expiration_date, :current_punches, :user_id, :punchcard_id)
+      params.require(:userPunchcard).permit(:expiration_date, :current_points, :user_id, :punchcard_id)
     end
 end

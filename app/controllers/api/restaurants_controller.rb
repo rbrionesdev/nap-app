@@ -1,6 +1,7 @@
 class Api::RestaurantsController < ApplicationController
-  before_action :
+  before_action :authenticate_user!
   before_action :set_restaurant, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:index]
 
   def index
     restaurants = @user.restaurants.all

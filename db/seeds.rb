@@ -33,16 +33,16 @@ users = [user,user2,user3,user4,user5]
 
 rests = [rest, rest2, rest3, rest4]
 
-      punch = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch2 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch3 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch4 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch5 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch6 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch7 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch8 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch9 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
-      punch1 = rest.punchcards.create(total_punches:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch2 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch3 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch4 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch5 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch6 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch7 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch8 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch9 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch1 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
 
 punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
 
@@ -51,7 +51,7 @@ punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9
       end
   
   15.times do
-      UserPunchcard.create(current_punches:rand(10), user_id:users[rand(4)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(10), user_id:users[rand(4)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
     end
 
 
