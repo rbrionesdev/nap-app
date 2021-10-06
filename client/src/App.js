@@ -11,6 +11,7 @@ import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
 import ProtectedRoute from './Components/ProtectedRoute';
 import EditUser from './Components/EditUser';
+import QRdemo from './Components/QRdemo';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             {/* <Route exact path='/components' component={ComponentExample} /> */}
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
+            <Route exact path='/qrdemo' component={QRdemo} />
             <Route component={NoMatch} />
           </Switch>
         </Container>
