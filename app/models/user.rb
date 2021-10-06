@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
 
     select('u.id AS user_id,
       u.name AS user_name,
-      up.current_punches AS current_punches,
+      up.current_points AS current_points,
       u.email,
       up.id,
       up.punchcard_id AS user_punchcards_id,
-      p.total_punches AS needed_punches,
+      p.total_points AS needed_points,
       p.description AS punch_descrip,
       p.restaurant_id,
       r.name AS restaurant_name')

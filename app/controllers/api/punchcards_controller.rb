@@ -43,7 +43,7 @@ class Api::PunchcardsController < ApplicationController
   end
 
   def punchcard_params
-    params.require(:punchcard).permit(:total_punches, :user_id, :restaurant_id)
+    params.require(:punchcard).permit(:total_points, :user_id, :restaurant_id)
   end
 
 end
