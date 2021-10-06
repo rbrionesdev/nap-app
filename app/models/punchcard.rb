@@ -19,5 +19,4 @@ class Punchcard < ApplicationRecord
      .where('u.id = ?')
      
   end
-
 end
