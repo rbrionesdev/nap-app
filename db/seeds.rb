@@ -18,6 +18,7 @@ User.destroy_all
 account_types = ['business', 'customer']
 
      user = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
+
      user2 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
      user3 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
      user4 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
@@ -47,11 +48,11 @@ punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9
 
     15.times do
       reward = punch.rewards.create(name:Faker::Name.name, description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(10))
-    end
-    15.times do
+      end
+  
+  15.times do
       UserPunchcard.create(current_punches:rand(10), user_id:users[rand(4)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
     end
-
 
 
 puts User.all.length
