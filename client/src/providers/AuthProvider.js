@@ -12,9 +12,9 @@ const AuthProvider = (props) => {
     try {
       setError(null)
       setLoading(true)
-      // for testing
       let res = await axios.post('/api/auth', user)
       setUser(res.data.data)
+      console.log(res.data.data)
       history.push('/')
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
@@ -33,6 +33,7 @@ const AuthProvider = (props) => {
     } catch (err) {
       setError(err)
       console.log(err)
+      alert("Please, sign up")
     }
   };
 
@@ -48,6 +49,18 @@ const AuthProvider = (props) => {
       console.log(err)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleDelete = async (history) => {
+    try {
+
+      await axios.delete(`/api/users/${user.id}`)
+      localStorage.removeItem('access-token')
+      setUser(null)
+      history.push('/')
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -68,6 +81,7 @@ const AuthProvider = (props) => {
       handleLogin,
       handleLogout,
       handleUserUpdate,
+      handleDelete,
       loading,
       authenticated: user ? true : false
     }}>

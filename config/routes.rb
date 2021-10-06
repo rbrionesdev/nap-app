@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
+  # devise_for :users, :controllers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     resources :users do
@@ -15,5 +16,8 @@ Rails.application.routes.draw do
 
     get 'things', to: 'things#index'
   
+    delete 'users/:id', to: 'users#delete'
+
+
 end
          

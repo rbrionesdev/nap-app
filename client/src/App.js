@@ -7,6 +7,7 @@ import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
+import EditUser from './Components/EditUser'
 import ProtectedRoute from './Components/ProtectedRoute';
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
@@ -23,12 +24,14 @@ function App() {
         <Container>
           <Switch>
             <Route exact path='/' component={Home} />
+            <ProtectedRoute exact path='/edit_user' component={EditUser} />
             <Route exact path='/landing' component={Landing} />
             <Route exact path='/earn' component={Earn} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
+
 
 
             <Route exact path='/login' component={Login} />

@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Message } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext)
-  const [email, setEmail] = useState('clifton@thompson.io')
+  const [email, setEmail] = useState('test@test.com')
   const [password, setPassword] = useState('123456')
   const history = useHistory()
 
@@ -26,6 +26,9 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <Button>Login</Button>
+      <Message>
+        New to us? <a href='/register'>Sign Up</a>
+      </Message>
     </Form>
   );
 }
