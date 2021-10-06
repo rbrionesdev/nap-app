@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router';
 import { Container } from 'semantic-ui-react'
 import Home from './pages/Home';
 import Things from './pages/Things';
-import ComponentExample from './Components/ComponentExample';
 import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
@@ -22,7 +21,6 @@ function App() {
             <Route exact path='/' component={Home} />
             <ProtectedRoute exact path='/things' component={Things} />
             <ProtectedRoute exact path='/edit_user' component={EditUser} />
-            {/* <Route exact path='/components' component={ComponentExample} /> */}
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route component={NoMatch} />
