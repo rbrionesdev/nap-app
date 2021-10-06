@@ -17,12 +17,12 @@ User.destroy_all
 
 account_types = ['business', 'customer']
 
-     user = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
+     user = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
 
-     user2 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
-     user3 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
-     user4 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
-     user5 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
+     user2 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
+     user3 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'customer')
+     user4 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'customer')
+     user5 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
 
 users = [user,user2,user3,user4,user5]
 
