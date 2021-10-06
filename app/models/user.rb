@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :restaurants
   
 
-  def punchcards_byuser
+  def self.punchcards_byuser(id)
     # SELECT u.id AS user_id, u.name AS user_name, u.email, up.id, up.punchcard_id AS user_punchcards_id, p.description AS punch_descrip, p.restaurant_id, r.name AS restaurant_name
     # FROM users AS u
     # INNER JOIN user_punchcards AS up ON up.user_id = u.id
@@ -18,8 +18,7 @@ class User < ActiveRecord::Base
     .joins('INNER JOIN user_punchcards AS up ON up.user_id = u.id
      INNER JOIN punchcards AS p ON up.punchcard_id = p.id
      INNER JOIN restaurants AS r ON p.restaurant_id = r.id')
-     .where('u.id = ?')
-     
+     .where('u.id = (?)', id)
   end
   
   extend Devise::Models
@@ -30,3 +29,4 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   
 end
+brain.larkin@kozey-gusikowski.com
