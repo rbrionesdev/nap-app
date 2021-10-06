@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
     get 'things', to: 'things#index'
     get 'restaurants/all', to: 'restaurants#all'
+  
 end

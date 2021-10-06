@@ -19,6 +19,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def punchcard_by_user
+    render json: User.punchcards_byuser(params[:id])
+  end
+
+
   def destroy
     @user.destroy
     render json: @user
@@ -31,7 +36,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :account_type, :email, :password)
   end
 
 end

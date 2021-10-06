@@ -6,12 +6,13 @@ import Home from './pages/Home';
 import Things from './pages/Things';
 import ComponentExample from './Components/ComponentExample';
 import NoMatch from './Components/NoMatch';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './Components/Login';
+import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
 import ProtectedRoute from './Components/ProtectedRoute';
 import Restaurant from './Components/Restaurant';
 import Restaurants from './pages/Restaurants';
+import EditUser from './Components/EditUser';
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
       <FetchUser>
         <Container>
           <Switch>
-            <Route exact path='/' component={Home}/>    
-            <ProtectedRoute exact path='/things' component={Things}/>
-            <Route exact path='/components' component={ComponentExample}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/register' component={Register}/>
+            <Route exact path='/' component={Home} />
+            <ProtectedRoute exact path='/things' component={Things} />
+            <ProtectedRoute exact path='/edit_user' component={EditUser} />
+            {/* <Route exact path='/components' component={ComponentExample} /> */}
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
             <Route exact path='/restaurants' component={Restaurants}/>
-            <Route component={NoMatch}/>
+            <Route component={NoMatch} />
           </Switch>
         </Container>
       </FetchUser>
