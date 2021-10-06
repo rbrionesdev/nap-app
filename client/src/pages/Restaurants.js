@@ -35,7 +35,7 @@ function Restaurants(props) {
     )
   })}
 
-  const deleteStore = async (id) => {
+const deleteStore = async (id) => {
     try {
       await axios.delete(`/api/restaurants/${id}`)
     } catch (error) {
@@ -50,7 +50,7 @@ function Restaurants(props) {
         <RestaurantForm />
         </Card.Content>
       </Card>
-      <h1>One Business Person's Restaurants:</h1>
+      <h1>One Creator's Restaurants:</h1>
       {renderStores()}
     </div>
   );
