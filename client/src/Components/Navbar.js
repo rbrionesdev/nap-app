@@ -6,13 +6,20 @@ import { useHistory, useLocation } from 'react-router'
 
 const NavBar = () => {
   const history = useHistory()
-  const {user, handleLogout } = useContext(AuthContext)
+  const { user, handleLogout } = useContext(AuthContext)
   const location = useLocation()
 
   const rightNavItems = () => {
     if (user) {
       return (
-        <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
+        <>
+          <Link to='/edit_user'>
+            <Menu.Item active={location.pathname === '/edit_user'} >
+              Edit User
+            </Menu.Item>
+          </Link>
+          <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
+        </>
       );
     }
     return (
