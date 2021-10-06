@@ -14,6 +14,7 @@ import Restaurant from './Components/Restaurant';
 import Restaurants from './pages/Restaurants';
 import EditUser from './Components/EditUser';
 import QRdemo from './Components/QRdemo';
+import UserPunchCards from './pages/UserPunchCards';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/qrdemo' component={QRdemo} />
+            <Route exact path='/user/punchcards' component={UserPunchCards} />
             <Route component={NoMatch} />
           </Switch>
         </Container>

@@ -6,14 +6,23 @@ class User < ActiveRecord::Base
   
 
   def self.punchcards_byuser(id)
-    # SELECT u.id AS user_id, u.name AS user_name, u.email, up.id, up.punchcard_id AS user_punchcards_id, p.description AS punch_descrip, p.restaurant_id, r.name AS restaurant_name
-    # FROM users AS u
-    # INNER JOIN user_punchcards AS up ON up.user_id = u.id
-    # INNER JOIN punchcards AS p ON up.punchcard_id = p.id
-    # INNER JOIN restaurants AS r ON p.restaurant_id = r.id
-    # WHERE u.id = 109
+# SELECT u.id AS user_id, u.name AS user_name, u.email, up.id, up.current_punches AS current_punches, up.punchcard_id AS user_punchcards_id, p.total_punches AS needed_punches, p.description AS punch_descrip, p.restaurant_id, r.name AS restaurant_name
+# FROM users AS u
+# INNER JOIN user_punchcards AS up ON up.user_id = u.id
+# INNER JOIN punchcards AS p ON up.punchcard_id = p.id
+# INNER JOIN restaurants AS r ON p.restaurant_id = r.id
+# WHERE u.id = 115
 
-    select('u.id AS user_id, u.name AS user_name, u.email, up.id, up.punchcard_id AS user_punchcards_id, p.description AS punch_descrip, p.restaurant_id, r.name AS restaurant_name')
+    select('u.id AS user_id,
+      u.name AS user_name,
+      up.current_punches AS current_punches,
+      u.email,
+      up.id,
+      up.punchcard_id AS user_punchcards_id,
+      p.total_punches AS needed_punches,
+      p.description AS punch_descrip,
+      p.restaurant_id,
+      r.name AS restaurant_name')
     .from('users AS u')
     .joins('INNER JOIN user_punchcards AS up ON up.user_id = u.id
      INNER JOIN punchcards AS p ON up.punchcard_id = p.id
@@ -29,4 +38,3 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   
 end
-brain.larkin@kozey-gusikowski.com
