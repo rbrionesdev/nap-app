@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Button, Form } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
-import ErrorMessage from './ErrorMessage';
+import ErrorMessage from '../Components/ErrorMessage';
 
 export default function EditUser() {
   const { handleUserUpdate, error, loading, user } = useContext(AuthContext);

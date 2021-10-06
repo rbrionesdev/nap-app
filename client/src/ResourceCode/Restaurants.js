@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Button, Card } from 'semantic-ui-react';
-import RestaurantForm from '../Components/RestaurantForm';
-import Restaurant from '../Components/Restaurant';
+import RestaurantForm from './RestaurantForm';
+import Restaurant from './Restaurant';
 import { AuthContext } from '../providers/AuthProvider'
 
 function Restaurants(props) {

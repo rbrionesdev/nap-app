@@ -28,9 +28,9 @@ const UserPunchCards = () => {
         <div>
           <Card>
           <h1>{p.restaurant_name}</h1>
-          <p>{p.needed_punches} Punches Required</p>
+          <p>{p.needed_points} Points Required</p>
           <p>{p.punch_descrip}</p>
-          <p>You have {p.current_punches} punches</p>
+          <p>You have {p.current_points} points</p>
           </Card>
         </div>
       )
