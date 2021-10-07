@@ -28,7 +28,7 @@ class UserPunchcard < ApplicationRecord
   .from('punchcards AS p')
   .joins('INNER JOIN rewards AS r ON p.id = r.punchcard_id
   INNER JOIN user_punchcards AS up ON up.punchcard_id = r.punchcard_id')
-  .where('p.id = ?' punchcard_id)
+  .where('p.id = ?', punchcard_id)
 
 
   end

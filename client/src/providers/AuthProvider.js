@@ -14,8 +14,9 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.post('/api/auth', user)
       setUser(res.data.data)
-      console.log(res.data.data)
       history.push('/')
+      console.log(res.data.data)
+      console.log("User registered successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
       console.log(err)
@@ -26,10 +27,13 @@ const AuthProvider = (props) => {
 
   const handleLogin = async (user, history) => {
     try {
+      setError(null)
+      setLoading(true)
       let res = await axios.post('/api/auth/sign_in', user)
-      console.log(res.data.data)
       setUser(res.data.data)
       history.push('/')
+      console.log(res.data.data)
+      console.log("User login successfully!")
     } catch (err) {
       setError(err)
       console.log(err)
@@ -44,6 +48,7 @@ const AuthProvider = (props) => {
       let res = await axios.put('/api/auth', user)
       setUser(res.data.data)
       history.push('/')
+      console.log("User updated successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
       console.log(err)
@@ -54,21 +59,20 @@ const AuthProvider = (props) => {
 
   const handleDelete = async (history) => {
     try {
-
-      await axios.delete(`/api/users/${user.id}`)
-      localStorage.removeItem('access-token')
       setUser(null)
-      history.push('/')
+      localStorage.removeItem('access-token')
+      history.push('/login')
+      await axios.delete(`/api/users/${user.id}`)
     } catch (err) {
       console.log(err)
     }
   }
 
-
   const handleLogout = (history) => {
     setUser(null)
     localStorage.removeItem('access-token')
     history.push('/login')
+    console.log("User logout successfully!")
   };
 
   return (

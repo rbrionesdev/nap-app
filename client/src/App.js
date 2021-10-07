@@ -7,8 +7,11 @@ import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
-import EditUser from './Components/EditUser'
 import ProtectedRoute from './Components/ProtectedRoute';
+import Rewards from './pages/Rewards';
+import RewardForm from './Components/RewardForm';
+import EditUser from './Components/EditUser'
+// import ProtectedRoute from './Components/ProtectedRoute';
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
 import Search from './pages/Search'
@@ -25,14 +28,15 @@ function App() {
         <Container>
           <Switch>
             <Route exact path='/' component={Home} />
-            <ProtectedRoute exact path='/edit_user' component={EditUser} />
+            <Route exact path='/edit_user' component={EditUser} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
             <Route exact path='/landing' component={Landing} />
             <Route exact path='/earn' component={Earn} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/userpunchcards' component={UserPunchCards} />
 
 
 
@@ -41,7 +45,7 @@ function App() {
             <Route component={NoMatch} />
           </Switch>
         </Container>
-      </FetchUser>
+        </FetchUser>
     </>
   );
 }
