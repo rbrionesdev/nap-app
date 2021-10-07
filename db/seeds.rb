@@ -17,23 +17,45 @@ User.destroy_all
 
 account_types = ['business', 'customer']
 
-10.times do
-     user = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456')
-  10.times do 
-    rest = user.restaurants.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:user.id)
-    5.times do 
-      punch = rest.punchcards.create(total_punches:[rand(10)], restaurant_id:rest.id, description:Faker::Restaurant.description )
-      5.times do
-        reward = punch.rewards.create(name:Faker::Name.name, description:Faker::Restaurant.description, punchcard_id:punch.id, cost:[rand(10)])
+     user = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
+
+     user2 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
+     user3 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'customer')
+     user4 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'customer')
+     user5 = User.create( name:Faker::Name.name, email:Faker::Internet.email, password:'123456', account_type:'business')
+
+users = [user,user2,user3,user4,user5]
+
+      rest = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:users[rand(4)].id)
+      rest2 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:users[rand(4)].id)
+      rest3 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:users[rand(4)].id)
+      rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:users[rand(4)].id)
+
+rests = [rest, rest2, rest3, rest4]
+
+      punch = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch2 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch3 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch4 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch5 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch6 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch7 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch8 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch9 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+      punch1 = rest.punchcards.create(total_points:rand(10), restaurant_id:rests[rand(4)].id, description:Faker::Restaurant.description )
+
+punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
+
+    15.times do
+      reward = punch.rewards.create(name:Faker::Name.name, description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(10))
       end
-      # 5.times do
-      #   user_punch = UserPunchcards.create(current_punches:[rand(10)], user_id:user.id, punchcard_id:punch.id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
-      # end
+  
+  15.times do
+      UserPunchcard.create(current_points:rand(10), user_id:users[rand(4)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
     end
-  end
-end
 
 
 puts User.all.length
 puts Restaurant.all.length
 puts Reward.all.length
+puts UserPunchcard.all.length

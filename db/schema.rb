@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_224638) do
+ActiveRecord::Schema.define(version: 2021_10_06_222951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "punchcards", force: :cascade do |t|
-    t.integer "total_punches"
     t.text "description"
     t.string "logo"
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_points"
     t.index ["restaurant_id"], name: "index_punchcards_on_restaurant_id"
   end
 
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 2021_10_04_224638) do
   end
 
   create_table "user_punchcards", force: :cascade do |t|
-    t.integer "current_punches"
     t.string "expiration_date"
     t.bigint "user_id", null: false
     t.bigint "punchcard_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_points"
     t.index ["punchcard_id"], name: "index_user_punchcards_on_punchcard_id"
     t.index ["user_id"], name: "index_user_punchcards_on_user_id"
   end
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_224638) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "account_type"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
