@@ -15,6 +15,7 @@ import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
 import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
+import UserPunchCards from './ResourceCode/UserPunchCards'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/userpunchcards' component={UserPunchCards} />
 
 
 

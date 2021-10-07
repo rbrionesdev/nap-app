@@ -38,7 +38,7 @@ class Api::PunchcardsController < ApplicationController
 
   private
 
-  def set_punchard
+  def set_punchcard
     @punchcard = Punchcard.find(params[:id])
   end
 
