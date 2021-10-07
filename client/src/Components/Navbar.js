@@ -53,6 +53,16 @@ const NavBar = () => {
             Home
           </Link>
         </Menu.Item>
+        <Menu.Item as='a'>
+          <Link style={{ textDecoration: "none" }} to='/dashboard'>
+            Dashboard
+          </Link>
+        </Menu.Item>
+        <Menu.Item as='a'>
+          <Link style={{ textDecoration: "none" }} to='/search'>
+            Search
+          </Link>
+        </Menu.Item>
         <Menu.Menu position="right">
           {rightNavItems()}
         </Menu.Menu>

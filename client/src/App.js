@@ -18,16 +18,17 @@ import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
 import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
+import UserPunchCards from './ResourceCode/UserPunchCards'
 
 function App() {
   return (
     <>
       <NavBar />
+      <FetchUser>
         <Container>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/edit_user' component={EditUser} />
-            {/* <ProtectedRoute exact path='/edit_user' component={EditUser} /> */}
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/landing' component={Landing} />
@@ -36,9 +37,15 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
+
+
+
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
             <Route component={NoMatch} />
           </Switch>
         </Container>
+        </FetchUser>
     </>
   );
 }

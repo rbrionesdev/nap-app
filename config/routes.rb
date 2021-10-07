@@ -3,13 +3,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     resources :users do
-      resources :restaurants do
-        resources :punchcards do
-          resources :rewards 
+      resources :user_punchcard do
+        resources :restaurants do
+          resources :punchcards do
+            resources :rewards 
         end
       end
     end
+  end
     get 'restaurants/all', to: 'restaurants#all'
+    get 'punchcards/all', to: 'punchcards#all'
     get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
     delete 'users/:id', to: 'users#delete'
   end
