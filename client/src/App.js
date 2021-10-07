@@ -11,12 +11,12 @@ import Register from './pages/Register';
 import FetchUser from './Components/FetchUser';
 import ProtectedRoute from './Components/ProtectedRoute';
 import Rewards from './pages/Rewards';
+import RewardForm from './Components/RewardForm';
 
 function App() {
   return (
     <>
       <NavBar />
-      <FetchUser>
         <Container>
           <Switch>
             <Route exact path='/' component={Home}/>    
@@ -28,7 +28,6 @@ function App() {
             <Route component={NoMatch}/>
           </Switch>
         </Container>
-      </FetchUser>
     </>
   );
 }

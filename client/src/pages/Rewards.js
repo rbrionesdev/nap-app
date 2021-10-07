@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import RewardForm from '../Components/RewardForm';
 import Reward from './Reward';
 
 const Rewards = () => {
@@ -43,6 +44,7 @@ const Rewards = () => {
 
   return (
     <div>
+      <RewardForm/>
       <h2>Rewards</h2>
       {renderRewards()}
     </div>

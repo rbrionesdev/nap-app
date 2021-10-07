@@ -1,19 +1,18 @@
-import axios from "axios";
-import { useState } from "react";
+import axios from 'axios';
+import { useState } from 'react';
 
-const RewardForm = (props) => {
-  const [name, setName] = useState('');
-  const [desc, setDesc] = useState('');
-  const [cost, setCost] = useState('');
+const UpdateReward = (props) => {
+  const { reward } = props; 
+
+  const [name, setName] = useState(reward.name);
+  const [desc, setDesc] = useState(reward.desc);
+  const [cost, setCost] = useState(reward.cost);
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
-      let res = axios.post('/api/rewards/', { name: name, desc: desc, cost: cost })
-      setName('');
-      setDesc('');
-      setCost('');
+      axios.put('/api/rewards/', { name: name, desc: desc, cost: cost })
     } catch (error) {
       console.log(error)
     }
@@ -39,7 +38,7 @@ const RewardForm = (props) => {
           <input value={cost} onChange={e => setCost(e.target.value)} />
         </p>
 
-        <button>Submit!</button>
+        <button>Update!</button>
       </form>
     </div>
   );
