@@ -7,6 +7,9 @@ import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import FetchUser from './Components/FetchUser';
+import ProtectedRoute from './Components/ProtectedRoute';
+import Rewards from './pages/Rewards';
+import RewardForm from './Components/RewardForm';
 import EditUser from './Components/EditUser'
 // import ProtectedRoute from './Components/ProtectedRoute';
 import Landing from './pages/Landing';
@@ -20,7 +23,6 @@ function App() {
   return (
     <>
       <NavBar />
-      <FetchUser>
         <Container>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -37,7 +39,6 @@ function App() {
             <Route component={NoMatch} />
           </Switch>
         </Container>
-      </FetchUser>
     </>
   );
 }
