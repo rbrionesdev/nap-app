@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
     get 'restaurants/all', to: 'restaurants#all'
+    get 'punchcards/all', to: 'punchcards#all'
     get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
   end
 

@@ -1,5 +1,5 @@
 class Api::UserPunchcardController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:index]
   before_action :set_userPunchcard, only: [:show, :update, :destroy]
 
   def index
@@ -12,12 +12,12 @@ class Api::UserPunchcardController < ApplicationController
   end
 
   def create
-    @user_punchcard = User_punchcard.new(user_punchcard_params)
+    @user_punchcard = UserPunchcard.new(userPunchcard_params)
 
-    if @userPunchcard.save
+    if @user_punchcard.save
       render json: @userPunchcard
     else
-      render json: {error: @userPunchcard.errors}, status: 422
+      # render json: {error: @userPunchcard.error}, status: 422
     end
   end
 
@@ -37,6 +37,6 @@ class Api::UserPunchcardController < ApplicationController
     end
 
     def userPunchcard_params
-      params.require(:userPunchcard).permit(:expiration_date, :current_points, :user_id, :punchcard_id)
+      params.require(:user_punchcard).permit(:expiration_date, :current_points, :user_id, :punchcard_id)
     end
 end
