@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: @user
+    render json: @userDeviseTokenAuth::RegistrationsController
   end 
 
   def create
@@ -28,13 +28,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # def punchcard_by_user
-  #   render json: User.punchcards_byuser(params[:id])
-  # end
+  def punchcard_by_user
+    render json: User.punchcards_byuser(params[:id])
+  end
 
   def destroy
     @current_user.destroy
-    render json: @current_user
+    # render json: @current_user
+    redirect_to(new_user_session_path)
   end
 
   private
