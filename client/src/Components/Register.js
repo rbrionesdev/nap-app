@@ -7,7 +7,6 @@ import ErrorMessage from './ErrorMessage';
 const Register = () => {
   const { handleRegister, error, loading } = useContext(AuthContext)
   const [name, setName] = useState('test')
-  const [account_type, setAccount_Type] = useState('business')
   const [email, setEmail] = useState('test@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
@@ -16,7 +15,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     if (password === passwordConfirmation) {
       e.preventDefault();
-      handleRegister({ name, account_type, email, password }, history)
+      handleRegister({ name, email, password }, history)
     } else {
       alert('Password does not match')
     }
@@ -39,14 +38,6 @@ const Register = () => {
                 placeholder='Name'
                 // value={name}
                 onChange={(e) => setName(e.target.value)}
-              />
-              <Form.Input
-                // label="Account Type"
-                fluid icon='building'
-                iconPosition='left'
-                placeholder='Account Type'
-                // value={account_type}
-                onChange={(e) => setAccount_Type(e.target.value)}
               />
               <Form.Input
                 // label="Email"

@@ -46,23 +46,14 @@ const NavBar = () => {
       <Menu stackable inverted color='blue'>
         <Menu.Item as='a' header>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
-          LoyaltyApp
+          Nap-App
         </Menu.Item>
+        <Menu.Item as='a'>
           <Link style={{ textDecoration: "none" }} to='/'>
-        <Menu.Item as='a'>
             Home
-        </Menu.Item>
           </Link>
-          <Link style={{ textDecoration: "none" }} to='/dashboard'>
-        <Menu.Item as='a'>
-            Dashboard
         </Menu.Item>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to='/search'>
-        <Menu.Item as='a'>
-            Search
-        </Menu.Item>
-          </Link>
+
         <Menu.Menu position="right">
           {rightNavItems()}
         </Menu.Menu>
