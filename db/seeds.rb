@@ -10,12 +10,26 @@
 require 'faker'
 
 User.destroy_all
+Nap.destroy_all
 
-user = User.create( name:'business1', email:'business1@email.com', password:'123456')
-user5 = User.create( name:'business2', email:'business2@email.com', password:'123456')
-user2 = User.create( name:'business3', email:'business3@email.com', password:'123456')
-user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456')
-user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456')
-user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456')
+user = User.create( name:Faker::Name.neutral_first_name, email:'person1@email.com', password:'123456')
+user5 = User.create( name:Faker::Name.neutral_first_name, email:'person2@email.com', password:'123456')
+user2 = User.create( name:Faker::Name.neutral_first_name, email:'person3@email.com', password:'123456')
+user3 = User.create( name:Faker::Name.neutral_first_name, email:'person4@email.com', password:'123456')
+user4 = User.create( name:Faker::Name.neutral_first_name, email:'person5@email.com', password:'123456')
+user6 = User.create( name:Faker::Name.neutral_first_name, email:'person6@email.com', password:'123456')
 
-puts User.all.length
+n1 = Nap.create(title:'Afternoon Nap', duration:2, description:'A nap in the afternoon. A "catnap."', date:Faker::Time.forward(days: 6, period: :afternoon))
+n2 = Nap.create(title:'Morning Nap', duration:1, description:'A nap in the morning. You did not sleep well last night', date:Faker::Time.forward(days: 2, period: :morning))
+n3 = Nap.create(title:'Evening Nap', duration:3, description:'When you have stayed up too late and have work in the morning', date:Faker::Time.forward(days: 3, period: :evening))
+
+nt1 = NapTime.create(user_id:user.id, nap_id:n1.id)
+nt2 = NapTime.create(user_id:user.id, nap_id:n2.id)
+nt3 = NapTime.create(user_id:user3.id, nap_id:n3.id)
+nt4 = NapTime.create(user_id:user4.id, nap_id:n1.id)
+nt5 = NapTime.create(user_id:user5.id, nap_id:n2.id)
+nt6 = NapTime.create(user_id:user6.id, nap_id:n3.id)
+
+puts "Users: #{User.all.length}"
+puts "Naps: #{Nap.all.length}"
+puts "Nap times #{NapTime.all.length}"

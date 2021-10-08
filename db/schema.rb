@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_214357) do
+ActiveRecord::Schema.define(version: 2021_10_08_181040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "nap_times", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "nap_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nap_id"], name: "index_nap_times_on_nap_id"
+    t.index ["user_id"], name: "index_nap_times_on_user_id"
+  end
+
+  create_table "naps", force: :cascade do |t|
+    t.float "duration"
+    t.string "title"
+    t.text "description"
+    t.datetime "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -47,4 +65,6 @@ ActiveRecord::Schema.define(version: 2021_10_06_214357) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "nap_times", "naps"
+  add_foreign_key "nap_times", "users"
 end
