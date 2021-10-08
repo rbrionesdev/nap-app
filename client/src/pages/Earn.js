@@ -7,9 +7,11 @@ import '../StyleSheets/App.css'
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
   const [punchcardData, setPunchcardData] = useState([])
+  const [ownedCards, setOwnedCards] = useState([])
 
   useEffect(()=>{
     getData()
+    getOwnedCards()
   },[])
 
   const getData = async() => {
@@ -18,6 +20,16 @@ const Earn = (props) => {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
       setPunchcardData(res.data)
     } catch (error) {
+    }
+  }
+
+  const getOwnedCards = async() => {
+    try {
+      let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
+      let ownedIds = res.data.map(c => c.punchcard_id)
+      setOwnedCards(ownedIds)
+    } catch (error) {
+      
     }
   }
 
@@ -41,9 +53,12 @@ const Earn = (props) => {
         </h5>
         <br /> 
         <div>
-          <button onClick={()=> addToWallet(punchcardData.punchcard_id)}> Add Card </button> 
-          <br />
+        {ownedCards.includes(punchcardData.punchcard_id) ?
           <strong>Already in wallet</strong>
+          :
+          <button onClick={()=> addToWallet(punchcardData.punchcard_id)}> Add Card </button>
+        }
+          <br />
         </div>
           <div className="circle">
             <div className="circle__inner">
