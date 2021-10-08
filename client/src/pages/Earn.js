@@ -18,6 +18,7 @@ const Earn = () => {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
       setPunchcardData(res.data)
       console.log(res.data)
+      
     } catch (error) {
       console.log(error)
     }
