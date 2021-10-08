@@ -45,12 +45,19 @@ const NavBar = () => {
     <Sticky>
       <Menu stackable inverted color='blue'>
         <Menu.Item as='a' header>
+          <Link to='/landing_page'>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           Nap-App
+          </Link>
         </Menu.Item>
         <Menu.Item as='a'>
           <Link style={{ textDecoration: "none" }} to='/'>
             Home
+          </Link>
+        </Menu.Item>
+        <Menu.Item as='a'>
+          <Link style={{ textDecoration: "none" }} to='/leaderboard'>
+            Leaderboard
           </Link>
         </Menu.Item>
 
