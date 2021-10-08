@@ -3,6 +3,9 @@ import React, { useContext, useEffect, useState } from 'react'
 // import { Card } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 import { Card, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+// import { Card } from 'semantic-ui-react';
+import Earn from './Earn';
 
 
 const Dashboard = () => {
@@ -39,7 +42,7 @@ const Dashboard = () => {
         <div style={{padding:'10px'}}>
           <Card>
             <Card.Body>
-              <Card.Title>
+          <Card.Title>
           <h1>{p.restaurant_name}</h1>
           <p>{p.needed_points} Points Required</p>
           </Card.Title>
@@ -47,6 +50,10 @@ const Dashboard = () => {
           <p>You have {p.current_points} points</p>
           <p>{p.punchcard_id}</p>
           <Button onClick={()=>deletePunchcard(p.up_id)}>Remove</Button>
+
+          <Link to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
+            <Button>View</Button>
+          </Link>
           </Card.Body>
           </Card>
         </div>
@@ -54,18 +61,6 @@ const Dashboard = () => {
     })
   }
 
-  // <Card>
-  //     <Card.Body>
-  //       <Card.Title>
-  //     <h1>{props.restaurant_name}</h1><br/>
-  //     </Card.Title>
-  //     <Card.Text>
-  //       <p>{props.description}</p>
-  //       <p>id: {props.punch_id}</p>
-  //       </Card.Text>
-  //       {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Button onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Button>}
-  //     </Card.Body>
-  //   </Card>
 
   return (
     <div>
