@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Card } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
+import Earn from './Earn';
 
 
 const Dashboard = () => {
@@ -42,6 +44,9 @@ const Dashboard = () => {
           <p>{p.punch_descrip}</p>
           <p>You have {p.current_points} points</p>
           <p>{p.punchcard_id}</p>
+          <Link to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
+            <button>View</button>
+          </Link>
           <button onClick={()=>deletePunchcard(p.up_id)}>Delete</button>
           </Card>
         </div>
