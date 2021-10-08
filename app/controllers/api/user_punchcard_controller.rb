@@ -8,7 +8,7 @@ class Api::UserPunchcardController < ApplicationController
   end
 
   def show
-    render json: UserPunchcard.punchcard_show(params[:userpunchcard_id])
+    render json: UserPunchcard.punchcard_show(params[:id])[0]
   end
 
   def show_rewards
