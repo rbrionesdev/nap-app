@@ -61,7 +61,7 @@ punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9
       end
   
   15.times do
-      UserPunchcard.create(current_points:rand(10), user_id:custusers[rand(3)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[rand(3)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
     end
 
 

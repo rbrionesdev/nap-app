@@ -38,16 +38,16 @@ const MyCard = (props) => {
   
   return (
     <div style={{padding:'10px'}}>
-    <Card style={{ height: '18rem' }}>
+    <Card>
       <Card.Body>
         <Card.Title>
-      <h1>{props.restaurant_name}</h1><br/>
+      <h1>{props.restaurant_name}</h1>
       </Card.Title>
       <Card.Text>
         <p>{props.description}</p>
         <p>id: {props.punch_id}</p>
         </Card.Text>
-        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Button onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Button>}
+        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
       </Card.Body>
     </Card>
     </div>
