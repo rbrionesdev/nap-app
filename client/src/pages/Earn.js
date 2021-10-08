@@ -4,7 +4,7 @@ import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 import '../StyleSheets/App.css'
 
-const Earn = () => {
+const Earn = (props) => {
   const { user } = useContext(AuthContext)
   const [punchcardData, setPunchcardData] = useState([])
 
@@ -13,26 +13,20 @@ const Earn = () => {
   },[])
 
   const getData = async() => {
-    const userpunchcard_id = 38
+    const userpunchcard_id = props.match.params.userpunchcard_id
     try {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
       setPunchcardData(res.data)
-      console.log(res.data)
-      
     } catch (error) {
-      console.log(error)
     }
   }
 
   const addToWallet = async (punchcard_id) => {
     let user_id = user.id
-    console.log(user_id)
-    console.log(punchcard_id)
     try{
-      let res = await axios.post(`/api/users/${user.id}/user_punchcard`, {punchcard_id, user_id} )
-      console.log(res)
+      await axios.post(`/api/users/${user.id}/user_punchcard`, {punchcard_id, user_id} )
     }catch(err){
-      console.log(err)
+
     }
   }
 
