@@ -27,7 +27,6 @@ const NavBar = () => {
                   Edit Profile
                 </Link>
               </Menu.Item>
-              <Menu.Item onClick={() => handleDelete(history)}> <Icon name='trash' />Delete Profile</Menu.Item>
               <Dropdown.Divider />
               <Menu.Item onClick={() => handleLogout(history)}> <Icon name='log out' />Logout</Menu.Item>
             </Dropdown.Menu>
