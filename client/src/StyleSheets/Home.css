@@ -1,0 +1,24 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-right: 20px;
+  border-right: solid #eeeeee 2px;
+}
+
+.feed-wrapper {
+  margin: 15px 40px 0px 40px
+}
+
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  border-left: solid #eeeeee 2px;
+}

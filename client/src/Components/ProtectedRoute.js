@@ -14,7 +14,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {  //need to resea
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: "/landing_page",
               from: props.location,
             }}
           />

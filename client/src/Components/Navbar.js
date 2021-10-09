@@ -4,11 +4,16 @@ import { Dropdown, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/App.css'
+import Moon from '../imgs/moon.png'
 
 const NavBar = () => {
   const history = useHistory()
   const { user, handleLogout, handleDelete } = useContext(AuthContext)
   const location = useLocation()
+
+  const handleClick = (e, target) => {
+    history.push(`${target}`)
+  }
 
   const rightNavItems = () => {
     if (user) {
@@ -22,7 +27,6 @@ const NavBar = () => {
                   Edit Profile
                 </Link>
               </Menu.Item>
-              <Menu.Item onClick={() => handleDelete(history)}> <Icon name='trash' />Delete Profile</Menu.Item>
               <Dropdown.Divider />
               <Menu.Item onClick={() => handleLogout(history)}> <Icon name='log out' />Logout</Menu.Item>
             </Dropdown.Menu>
@@ -43,25 +47,19 @@ const NavBar = () => {
 
   return (
     <Sticky>
-      <Menu stackable inverted color='blue'>
-        <Menu.Item as='a' href='/landing_page' header>
-          <Image  size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
+      <Menu tabular stackable inverted color='blue'>
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/')} header>
+          <Image inverted size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/'>
-            Home
-          </Link>
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/')}>
+          Home
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/leaderboard'>
-            Leaderboard
-          </Link>
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/leaderboard')}>
+          Leaderboard
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/calendarweekly'>
-            Calendar
-          </Link>
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/calendarweekly')}>
+          Calendar
         </Menu.Item>
 
         <Menu.Menu position="right">

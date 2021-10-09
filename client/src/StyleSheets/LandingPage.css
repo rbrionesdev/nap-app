@@ -13,6 +13,8 @@
 .the {
   display: flex;
   justify-self: flex-start;
+  font-family: fantasy;
+  color:orange;
   font-size: 150px;
   font-weight: bold;
   font-style: italic;
@@ -23,6 +25,8 @@
 
 .nap {
   display: flex;
+  color:orange;
+  font-family: fantasy;
   font-size: 150px;
   font-weight: bold;
   font-style: italic;
@@ -34,6 +38,8 @@
 
 .app {
   display: flex;
+  color:orange;
+  font-family: fantasy;
   font-size: 150px;
   font-weight: bold;
   font-style: italic;
@@ -46,12 +52,24 @@
   display: flex;
   flex-direction: column;
   width: auto;
-  padding: 10px 40vh 10px 40vh
+  padding: 10px 30vh 10px 30vh
 }
 
 .about {
   display: flex;
   justify-content: flex-end;
   float: right;
+}
+
+.login {
+  display: flex;
+  justify-content: flex;
+  float: center;
+  padding: 10px 10px 10px 10px
+}
+
+.photo {
+  background-image: url(../imgs/moon2.png);
+  height: 789px;
 }
 

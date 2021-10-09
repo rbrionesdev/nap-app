@@ -19,9 +19,9 @@ user3 = User.create( name:Faker::Name.neutral_first_name, email:'person4@email.c
 user4 = User.create( name:Faker::Name.neutral_first_name, email:'person5@email.com', password:'123456', average_nap_time:7.2)
 user6 = User.create( name:Faker::Name.neutral_first_name, email:'person6@email.com', password:'123456', average_nap_time:9.4)
 
-n1 = Nap.create(title:'Afternoon Nap', duration:2, description:'A nap in the afternoon. A "catnap."', date:Faker::Time.forward(days: 6, period: :afternoon))
-n2 = Nap.create(title:'Morning Nap', duration:1, description:'A nap in the morning. You did not sleep well last night', date:Faker::Time.forward(days: 2, period: :morning))
-n3 = Nap.create(title:'Evening Nap', duration:3, description:'When you have stayed up too late and have work in the morning', date:Faker::Time.forward(days: 3, period: :evening))
+n1 = Nap.create(title:'Afternoon Nap', duration:2, description:'A nap in the afternoon. A "catnap."', date:'10/10/2021', hour:'15:30')
+n2 = Nap.create(title:'Morning Nap', duration:1, description:'A nap in the morning. You did not sleep well last night', date:'10/13/2021', hour:'09:00')
+n3 = Nap.create(title:'Evening Nap', duration:3, description:'When you have stayed up too late and have work in the morning', date:'10/14/2021', hour:'23:00')
 
 nt1 = NapTime.create(user_id:user.id, nap_id:n1.id)
 nt2 = NapTime.create(user_id:user.id, nap_id:n2.id)
