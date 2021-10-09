@@ -11,6 +11,10 @@ const NavBar = () => {
   const { user, handleLogout, handleDelete } = useContext(AuthContext)
   const location = useLocation()
 
+  const handleClick = (e, target) => {
+    history.push(`${target}`)
+  }
+
   const rightNavItems = () => {
     if (user) {
       return (
@@ -44,25 +48,19 @@ const NavBar = () => {
 
   return (
     <Sticky>
-      <Menu stackable inverted color='blue'>
-        <Menu.Item as='a' href='/landing_page' header>
-          <Image  size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
+      <Menu tabular stackable inverted color='blue'>
+        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/landing_page')} header>
+          <Image  inverted size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/'>
+        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/')}>
             Home
-          </Link>
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/leaderboard'>
+        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/leaderboard')}>
             Leaderboard
-          </Link>
         </Menu.Item>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/calendarweekly'>
+        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/calendarweekly')}>
             Calendar
-          </Link>
         </Menu.Item>
 
         <Menu.Menu position="right">
