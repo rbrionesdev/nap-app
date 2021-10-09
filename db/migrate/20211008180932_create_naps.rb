@@ -4,7 +4,8 @@ class CreateNaps < ActiveRecord::Migration[6.1]
       t.float :duration
       t.string :title
       t.text :description
-      t.datetime :date
+      t.string :date
+      t.string :hour
 
       t.timestamps
     end

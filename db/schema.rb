@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 2021_10_08_181040) do
     t.float "duration"
     t.string "title"
     t.text "description"
-    t.datetime "date"
+    t.string "date"
+    t.string "hour"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
