@@ -25,6 +25,9 @@ class Api::NapsController < ApplicationController
     render json: @nap
   end
 
+  def feed
+    render json: Nap.feed
+  end
 
   private
   def set_nap

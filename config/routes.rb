@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users do
     end
     get 'leaderboard', to: "users#leaderboard"
+    get 'feed', to: "naps#feed"
     resources :users
     resources :naps 
     resources :nap_times
