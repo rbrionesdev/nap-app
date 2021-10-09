@@ -19,15 +19,14 @@ const FetchUser = (props) => {
     }
 
     try{
-      const res = await axios.get('/api/auth/validate_token')
+      let res = await axios.get('/api/auth/validate_token')
       setUser(res.data.data)
-    }catch(err){
-
-    }finally{
+    } catch(err) {
+    } finally {
       setChecked(true)
     }
   }
-  return checked ? props.children : null
+  return checked ? props.children : null;
 }
 
-export default FetchUser
+export default FetchUser;
