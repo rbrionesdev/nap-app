@@ -6,6 +6,8 @@ const Home = (props) => {
     <div>
       <h1>Home</h1>
       <Button onClick={() => props.history.push("/nap/new")}>Schedule Nap</Button>
+      <br />
+      <Button onClick={() => props.history.push("/naps")}>View All Scheduled Naps</Button>
     </div>
   )
 }

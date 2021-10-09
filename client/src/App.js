@@ -13,6 +13,7 @@ import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import ProtectedRoute from './Components/ProtectedRoute';
 import CreateNap from './Components/CreateNap';
+import ScheduledNaps from './Components/ScheduledNaps';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path='/landing_page' component={LandingPage} />
             <Route exact path='/about' component={About} />
             <Route exact path='/nap/new' component={CreateNap} />
+            <Route exact path='/naps' component={ScheduledNaps} />
             <ProtectedRoute exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
