@@ -47,7 +47,7 @@ const NavBar = () => {
 
   return (
     <Sticky>
-      <Menu tabular stackable inverted color='blue'>
+      <Menu tabular stackable inverted color='orange'>
         <Menu.Item as='a' onClick={(e) => handleClick(e, '/')} header>
           <Image inverted size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
