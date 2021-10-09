@@ -1,0 +1,47 @@
+.the {
+  display: flex;
+  justify-self: flex-start;
+  font-size: 150px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0px;
+}
+
+.nap {
+  display: flex;
+  font-size: 150px;
+  font-weight: bold;
+  font-style: italic;
+  align-self: center;
+  margin-bottom: 0px;
+}
+
+.app {
+  display: flex;
+  font-size: 150px;
+  font-weight: bold;
+  font-style: italic;
+  align-self: flex-end;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 10px 40vh 10px 40vh
+}
+
+.about {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+
+@keyframes appear{
+  from {
+    opacity: 0%;
+  }
+  to {
+    opactiy: 100%
+  }
+}
