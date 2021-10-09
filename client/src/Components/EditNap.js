@@ -1,17 +1,38 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Button, Form, Input } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { Button, Form, Input, StepDescription } from "semantic-ui-react";
 
 const EditNap = (props) => {
 
   const [title, setTitle] = useState("");
   const [duration, setDuration] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(""); 
+  const [nap, setNap] = useState("");
 
-  const handleSubmit = async (id) => {
+
+  useEffect(() => {
+    getNap();
+  }, []);
+
+  const getNap = async () => {
     try {
-    let res = await axios.put(`/api/naps/${id}`, { title, duration, description, date });
+      let res = await axios.get(`/api/naps/${props.match.params.id}`);
+      setNap(res.data);
+      setTitle(res.data.title)
+      setDuration(res.data.duration)
+      setDescription(res.data.description)
+      setDate(res.data.date)
+    } catch (error) {
+      alert("error retrieving naps")
+      console.log(error);
+    };
+  };
+ 
+
+  const handleSubmit = async () => {
+    try {
+    await axios.put(`/api/naps/${props.match.params.id}`, { title, duration, description, date });
     props.history.push("/naps");
     } catch (error) {
       alert("error");

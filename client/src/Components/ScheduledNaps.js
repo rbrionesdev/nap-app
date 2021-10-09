@@ -59,7 +59,7 @@ const ScheduledNaps = (id, props) => {
               When: { nap.date }
             </Card.Content>
             <Button onClick={() => deleteNap(nap.id)}>Delete</Button>
-            <Button onClick={() => props.history.push(`/naps/${id}/edit`)}>Update</Button>
+            <Button onClick={() => history.push(`/naps/${nap.id}/edit`)}>Update</Button>
           </Card.Content>
         </Card>
         <br />

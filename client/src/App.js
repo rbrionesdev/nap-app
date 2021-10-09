@@ -29,7 +29,7 @@ function App() {
             <Route exact path='/about' component={About} />
             <Route exact path='/nap/new' component={CreateNap} />
             <Route exact path='/naps' component={ScheduledNaps} />
-            <Route exact path='naps/edit' component={EditNap} />
+            <Route exact path='/naps/:id/edit' component={EditNap} />
             <ProtectedRoute exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />

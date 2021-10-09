@@ -10,6 +10,16 @@ class Api::NapsController < ApplicationController
     render json: @nap
   end
 
+  def update
+    @nap = Nap.find(params[:id])
+    if (@nap.update(nap_params))
+      render json: @nap
+    else
+      render json: {errors: @nap.errors}
+    end
+  end
+
+
   def create
     @nap = Nap.new(nap_params)
 
