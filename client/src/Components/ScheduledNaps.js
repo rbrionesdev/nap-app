@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Header } from "semantic-ui-react";
+import { Card, Header, Button } from "semantic-ui-react";
 
-const ScheduledNaps = () => {
+const ScheduledNaps = (id) => {
 
   const [naps, setNaps] = useState([]);
 
@@ -19,6 +19,18 @@ const ScheduledNaps = () => {
       console.log(error);
     };
   };
+
+  const deleteNap = async (id) => {
+    try {
+      await axios.delete(`/api/naps/${id}`);
+      let filterNaps = naps.filter((n) => n.id !== id);
+      setNaps(filterNaps);
+    } catch (error) {
+      alert(error);
+      console.log("error");
+    };
+  };
+
 
   const renderNaps = () => {
     if (naps.length === 0) {
@@ -43,6 +55,7 @@ const ScheduledNaps = () => {
             <Card.Content extra>
               When: { nap.date }
             </Card.Content>
+            <Button onClick={() => deleteNap(nap.id)}>Delete</Button>
           </Card.Content>
         </Card>
         <br />
