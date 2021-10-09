@@ -44,7 +44,7 @@ const NavBar = () => {
 
   return (
     <Sticky>
-      <Menu stackable inverted color='blue'>
+      <Menu tabular stackable inverted color='blue'>
         <Menu.Item as='a' href='/landing_page' header>
           <Image  size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
