@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     resources :users do
     end
     get 'leaderboard', to: "users#leaderboard"
+    resources :users
+    resources :naps 
+    resources :nap_times
   end
-    delete 'users/:id', to: 'users#delete'
-
 end
          

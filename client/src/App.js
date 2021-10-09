@@ -11,6 +11,8 @@ import EditUser from './Components/EditUser'
 import Leaderboard from './pages/Leaderboard';
 import LandingPage from './pages/LandingPage';
 import About from './pages/About';
+import ProtectedRoute from './Components/ProtectedRoute';
+import CreateNap from './Components/CreateNap';
 
 function App() {
   return (
@@ -19,14 +21,16 @@ function App() {
       <FetchUser>
         <Container>
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/leaderboard' component={Leaderboard} />
+            <ProtectedRoute exact path='/' component={Home} />
+            <ProtectedRoute exact path='/leaderboard' component={Leaderboard} />
             <Route exact path='/landing_page' component={LandingPage} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/edit_user' component={EditUser} />
+            <Route exact path='/nap/new' component={CreateNap} />
+            <ProtectedRoute exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route component={NoMatch} />
+            
           </Switch>
         </Container>
       </FetchUser>
