@@ -34,6 +34,10 @@ class Api::UsersController < ApplicationController
     redirect_to(new_user_session_path)
   end
 
+  def leaderboard
+    render json: 
+  end
+
   private
 
   def set_user
