@@ -7,7 +7,7 @@ const NapCard = ({duration, description, title, date}) => {
       <Card.Content header={title}/>
       <Card.Content description={description}/>
       <Card.Content extra>
-        {date}, {duration}
+        {date} {duration}
       </Card.Content>
     </Card>
   )
