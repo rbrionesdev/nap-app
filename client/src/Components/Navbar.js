@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
+import { Dropdown, DropdownDivider, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/App.css'
@@ -27,8 +27,14 @@ const NavBar = () => {
                   Edit Profile
                 </Link>
               </Menu.Item>
-              <Dropdown.Divider />
               <Menu.Item onClick={() => handleLogout(history)}> <Icon name='log out' />Logout</Menu.Item>
+              <Dropdown.Divider />
+              <Menu.Item onClick={() => location.pathname === '/about'} >
+                <Link style={{ textDecoration: "none", color: "black" }} to='/about'>
+                  <Icon name='about' />
+                  Creators
+                </Link>
+                </Menu.Item>
             </Dropdown.Menu>
           </Dropdown>
         </>
