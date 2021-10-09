@@ -34,7 +34,7 @@ const Leaderboard = () => {
 
   return(
     <div>
-      <h1>Our top nappers</h1>
+      <h1>Our Top Nappers</h1>
       <Segment>
       <List>
         {renderUsers()}

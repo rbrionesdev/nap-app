@@ -11,7 +11,7 @@ export default function TimePickerDay() {
   }
   return (
     <div>
-      <h1>Pick the hour</h1>
+      <h1>Select Time</h1>
       <TimePicker
         name='Pick the hour'
         disableClock

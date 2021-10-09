@@ -3,8 +3,8 @@ import { useHistory } from 'react-router'
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import ErrorMessage from './ErrorMessage';
-import Moon from '../imgs/moon.png'
 import axios from 'axios';
+import Moon from '../imgs/moon.png'
 
 export default function EditUser(id) {
   const { handleUserUpdate, error, loading, user, setUser } = useContext(AuthContext);

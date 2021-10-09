@@ -15,7 +15,7 @@ export default function CalendarWeekly() {
     <div>
       <br />
       <Card>
-        <h1>Pick date</h1>
+        <h1>Select Date</h1>
         <Calendar
           showWeekNumbers
           onChange={onChange}
