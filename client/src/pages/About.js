@@ -7,7 +7,7 @@ import rafImg from '../imgs/raf_img.png'
 const About = () => {
   return(
     <div>
-      <h1>The creators</h1>
+      <h1>The Creators</h1>
       <Card.Group centered>
         <Card>
           <Image src={tomImg} wrapped ui={false}/>
@@ -40,6 +40,8 @@ const About = () => {
           </Card.Content>
         </Card>
       </Card.Group>
+      <br />
+      <h2><center>Resisting A Rest!</center></h2>
     </div>
   )
 }

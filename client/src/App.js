@@ -16,18 +16,23 @@ import CreateNap from './Components/CreateNap';
 import CalendarWeekly from './Components/CalendarWeekly';
 import ScheduledNaps from './Components/ScheduledNaps';
 import EditNap from './Components/EditNap';
+import { useLocation } from 'react-router';
+
 
 function App() {
+  const location = useLocation();
   return (
     <>
-      <NavBar />
+      {location.pathname === '/landing_page' ? null : <NavBar />}
+
+      {/* <NavBar /> */}
       <FetchUser>
         <Container>
           <Switch>
             <ProtectedRoute exact path='/' component={Home} />
             <Route exact path='/' component={Home} />
-            <Route exact path='/leaderboard' component={Leaderboard} />
-            <Route exact path='/calendarweekly' component={CalendarWeekly} />
+            <ProtectedRoute exact path='/leaderboard' component={Leaderboard} />
+            <ProtectedRoute exact path='/calendarweekly' component={CalendarWeekly} />
             <Route exact path='/landing_page' component={LandingPage} />
             <Route exact path='/about' component={About} />
             <Route exact path='/nap/new' component={CreateNap} />
@@ -37,7 +42,6 @@ function App() {
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route component={NoMatch} />
-            
           </Switch>
         </Container>
       </FetchUser>
