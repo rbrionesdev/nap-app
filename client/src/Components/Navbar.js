@@ -58,6 +58,11 @@ const NavBar = () => {
             Leaderboard
           </Link>
         </Menu.Item>
+        <Menu.Item as='a'>
+          <Link style={{ textDecoration: "none" }} to='/calendarweekly'>
+            Calendar
+          </Link>
+        </Menu.Item>
 
         <Menu.Menu position="right">
           {rightNavItems()}
