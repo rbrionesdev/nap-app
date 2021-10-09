@@ -49,18 +49,18 @@ const NavBar = () => {
   return (
     <Sticky>
       <Menu tabular stackable inverted color='blue'>
-        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/')} header>
-          <Image  inverted size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/')} header>
+          <Image inverted size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
         </Menu.Item>
-        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/')}>
-            Home
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/')}>
+          Home
         </Menu.Item>
-        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/leaderboard')}>
-            Leaderboard
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/leaderboard')}>
+          Leaderboard
         </Menu.Item>
-        <Menu.Item as='a' onClick={(e)=>handleClick(e, '/calendarweekly')}>
-            Calendar
+        <Menu.Item as='a' onClick={(e) => handleClick(e, '/calendarweekly')}>
+          Calendar
         </Menu.Item>
 
         <Menu.Menu position="right">

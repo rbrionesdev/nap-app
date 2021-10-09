@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import ErrorMessage from './ErrorMessage';
+import Moon from '../imgs/moon.png'
 
 const Register = () => {
   const { handleRegister, error, loading } = useContext(AuthContext)
@@ -27,7 +28,7 @@ const Register = () => {
       <Grid textAlign='center' style={{ height: '90vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' mini color='blue' textAlign='center'>
-            <Image src='/logo512.png' /> Register new account
+            <Image src={Moon} /> Register new account
           </Header>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
