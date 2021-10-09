@@ -4,6 +4,7 @@ import { Dropdown, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/App.css'
+import Moon from '../imgs/moon.png'
 
 const NavBar = () => {
   const history = useHistory()
@@ -45,7 +46,7 @@ const NavBar = () => {
     <Sticky>
       <Menu stackable inverted color='blue'>
         <Menu.Item as='a' href='/landing_page' header>
-          <Image  size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
+          <Image  size='mini' src={Moon} style={{ marginRight: '1.5em' }} />
           Nap-App
         </Menu.Item>
         <Menu.Item as='a'>
