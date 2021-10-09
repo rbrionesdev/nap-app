@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_page
   before_action :set_user, only: [:show, :destroy]
 
 
@@ -35,7 +36,7 @@ class Api::UsersController < ApplicationController
   end
 
   def leaderboard
-    render json: 
+    render json: {users: User.users_by_average.page(@page), total_pages: User.users_by_average.page(@page).total_pages}
   end
 
   private
@@ -46,6 +47,10 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+
+  def set_page
+    @page = params[:page] || 1
   end
 
 end
