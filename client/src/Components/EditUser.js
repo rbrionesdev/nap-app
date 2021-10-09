@@ -37,7 +37,7 @@ export default function EditUser(id) {
       <Grid textAlign='center' style={{ height: '90vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' mini color='blue' textAlign='center'>
-            <Image src={Moon} /> Update new account
+            <Image src={Moon} /> Update Account
           </Header>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
@@ -72,6 +72,8 @@ export default function EditUser(id) {
               <Button color='blue' fluid size='large'>Update</Button>
             </Segment>
           </Form>
+          <br />
+          <Button fluid size='medium' onClick={() => deleteUser(id)}>Delete Account</Button>
         </Grid.Column>
       </Grid>
     </div>
