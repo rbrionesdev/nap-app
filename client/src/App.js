@@ -14,6 +14,7 @@ import About from './pages/About';
 import ProtectedRoute from './Components/ProtectedRoute';
 import CreateNap from './Components/CreateNap';
 import ScheduledNaps from './Components/ScheduledNaps';
+import EditNap from './Components/EditNap';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route exact path='/about' component={About} />
             <Route exact path='/nap/new' component={CreateNap} />
             <Route exact path='/naps' component={ScheduledNaps} />
+            <Route exact path='naps/edit' component={EditNap} />
             <ProtectedRoute exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
