@@ -12,12 +12,12 @@ require 'faker'
 User.destroy_all
 Nap.destroy_all
 
-user = User.create( name:Faker::Name.neutral_first_name, email:'person1@email.com', password:'123456')
-user5 = User.create( name:Faker::Name.neutral_first_name, email:'person2@email.com', password:'123456')
-user2 = User.create( name:Faker::Name.neutral_first_name, email:'person3@email.com', password:'123456')
-user3 = User.create( name:Faker::Name.neutral_first_name, email:'person4@email.com', password:'123456')
-user4 = User.create( name:Faker::Name.neutral_first_name, email:'person5@email.com', password:'123456')
-user6 = User.create( name:Faker::Name.neutral_first_name, email:'person6@email.com', password:'123456')
+user = User.create( name:Faker::Name.neutral_first_name, email:'person1@email.com', password:'123456', average_nap_time:2.5)
+user5 = User.create( name:Faker::Name.neutral_first_name, email:'person2@email.com', password:'123456', average_nap_time:6)
+user2 = User.create( name:Faker::Name.neutral_first_name, email:'person3@email.com', password:'123456', average_nap_time:3)
+user3 = User.create( name:Faker::Name.neutral_first_name, email:'person4@email.com', password:'123456', average_nap_time:8)
+user4 = User.create( name:Faker::Name.neutral_first_name, email:'person5@email.com', password:'123456', average_nap_time:7.2)
+user6 = User.create( name:Faker::Name.neutral_first_name, email:'person6@email.com', password:'123456', average_nap_time:9.4)
 
 n1 = Nap.create(title:'Afternoon Nap', duration:2, description:'A nap in the afternoon. A "catnap."', date:Faker::Time.forward(days: 6, period: :afternoon))
 n2 = Nap.create(title:'Morning Nap', duration:1, description:'A nap in the morning. You did not sleep well last night', date:Faker::Time.forward(days: 2, period: :morning))

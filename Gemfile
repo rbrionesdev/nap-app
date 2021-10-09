@@ -26,6 +26,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 gem "devise_token_auth"
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
