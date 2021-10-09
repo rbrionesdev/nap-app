@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from'axios'
 import OurPagination from '../Components/OurPagination'
 import LeaderboardCard from '../Components/LeaderboardCard'
-import { Card } from 'semantic-ui-react'
+import { List, Segment } from 'semantic-ui-react'
 
 const Leaderboard = () => {
   const [users, setUsers] = useState([])
@@ -34,10 +34,12 @@ const Leaderboard = () => {
 
   return(
     <div>
-      <h1>Leaderboard</h1>
-      <Card.Group>
+      <h1>Our top nappers</h1>
+      <Segment>
+      <List>
         {renderUsers()}
-      </Card.Group>
+      </List>
+      </Segment>
       {/* <OurPagination page={page} setPage={setPage} totalPages={totalPages} method={getUsers} /> */}
     </div>
   )

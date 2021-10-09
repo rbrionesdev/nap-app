@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
+import Moon from '../imgs/moon.png'
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext)
@@ -17,7 +18,7 @@ const Login = () => {
     <Grid textAlign='center' style={{ height: '90vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' color='blue' textAlign='center'>
-          <Image src='/logo512.png' /> Log-in to your account
+          <Image src={Moon} /> Log-in to your account
         </Header>
         <Form onSubmit={handleSubmit} size='large'>
           <Segment stacked>
