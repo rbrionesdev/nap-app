@@ -11,6 +11,7 @@ import EditUser from './Components/EditUser'
 import Leaderboard from './pages/Leaderboard';
 import LandingPage from './pages/LandingPage';
 import About from './pages/About';
+import CalendarWeekly from './Components/CalendarWeekly';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/leaderboard' component={Leaderboard} />
+            <Route exact path='/calendarweekly' component={CalendarWeekly} />
             <Route exact path='/landing_page' component={LandingPage} />
             <Route exact path='/about' component={About} />
             <Route exact path='/edit_user' component={EditUser} />
