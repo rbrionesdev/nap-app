@@ -4,10 +4,15 @@ import { Card } from 'semantic-ui-react';
 const NapCard = ({duration, description, title, date}) => {
   return (
     <Card>
-      <Card.Content header={title}/>
+      <Card.Content>
+        <Card.Header>{title}</Card.Header>
+        <Card.Meta>{duration} hours</Card.Meta>
+      </Card.Content>
       <Card.Content description={description}/>
       <Card.Content extra>
-        {date} {duration}
+        <Card.Meta>
+          {date}
+        </Card.Meta>
       </Card.Content>
     </Card>
   )
