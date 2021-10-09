@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Feed, FeedEvent } from 'semantic-ui-react'
+import { Feed } from 'semantic-ui-react'
 import NapCard from './NapCard'
 
 const NapFeed = () => {

@@ -8,9 +8,9 @@ const LandingPage = () => {
   return(
     <div>
       <div className='title-wrapper'>
-        <p className='the'>The</p>
-        <p className='nap'>Nap</p>
-        <p className='app'>App</p>
+        <p className='the'>THE</p>
+        <p className='nap'>NAP</p>
+        <p className='app'>APP</p>
       </div>
 
       <div className='about'>

@@ -5,11 +5,11 @@ import NapFeed from '../Components/NapFeed';
 const Home = (props) => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Friend Nap Activity</h1>
       <Button onClick={() => props.history.push("/nap/new")}>Schedule Nap</Button>
-      <NapFeed />
-      <br />
       <Button onClick={() => props.history.push("/naps")}>View All Scheduled Naps</Button>
+      <br />
+      <NapFeed />
     </div>
   )
 }
