@@ -25,7 +25,6 @@ function App() {
         <Container>
           <Switch>
             <ProtectedRoute exact path='/' component={Home} />
-            <ProtectedRoute exact path='/leaderboard' component={Leaderboard} />
             <Route exact path='/' component={Home} />
             <Route exact path='/leaderboard' component={Leaderboard} />
             <Route exact path='/calendarweekly' component={CalendarWeekly} />
